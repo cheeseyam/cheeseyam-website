@@ -12,10 +12,13 @@
 </head>
 <body>
 
-<header class="nav">
+<header class="nav" id="siteNav">
   <div class="nav-inner">
     <a href="#top" class="logo">🍠 胡家起司地瓜燒</a>
-    <nav class="nav-links">
+    <button class="nav-toggle" id="navToggle" type="button" aria-label="開啟選單" aria-expanded="false" aria-controls="navLinks">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="nav-links" id="navLinks">
       <a href="#story">品牌故事</a>
       <a href="#menu">菜單</a>
       <a href="#stall">擺攤資訊</a>
@@ -195,6 +198,43 @@
     <p class="copyright">© 2026 胡家起司地瓜燒．鳳西市場</p>
   </div>
 </footer>
+
+<script>
+(function () {
+  var nav = document.getElementById('siteNav');
+  var toggle = document.getElementById('navToggle');
+  var links = document.getElementById('navLinks');
+
+  toggle.addEventListener('click', function () {
+    var isOpen = links.classList.toggle('open');
+    toggle.classList.toggle('open', isOpen);
+    toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  });
+
+  links.querySelectorAll('a').forEach(function (a) {
+    a.addEventListener('click', function () {
+      links.classList.remove('open');
+      toggle.classList.remove('open');
+      toggle.setAttribute('aria-expanded', 'false');
+    });
+  });
+
+  var lastScrollY = window.scrollY;
+  window.addEventListener('scroll', function () {
+    var y = window.scrollY;
+    nav.classList.toggle('nav-compact', y > 20);
+
+    if (!links.classList.contains('open')) {
+      if (y > lastScrollY && y > 120) {
+        nav.classList.add('nav-hidden');
+      } else {
+        nav.classList.remove('nav-hidden');
+      }
+    }
+    lastScrollY = y;
+  }, { passive: true });
+})();
+</script>
 
 </body>
 </html>

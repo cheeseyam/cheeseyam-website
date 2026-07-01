@@ -63,6 +63,7 @@ a {
   background: rgba(255, 250, 243, 0.9);
   backdrop-filter: blur(6px);
   border-bottom: 1px solid rgba(193, 68, 14, 0.12);
+  transition: transform 0.25s ease, padding 0.25s ease;
 }
 
 .nav-inner {
@@ -74,6 +75,7 @@ a {
   align-items: center;
   flex-wrap: wrap;
   gap: 12px;
+  transition: padding 0.25s ease;
 }
 
 .logo {
@@ -81,6 +83,35 @@ a {
   font-size: 1.15rem;
   color: var(--orange-deep);
 }
+
+.nav-toggle {
+  display: none;
+  position: relative;
+  width: 28px;
+  height: 20px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.nav-toggle span {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--brown);
+  border-radius: 2px;
+  transition: top 0.25s ease, transform 0.25s ease, opacity 0.2s ease;
+}
+
+.nav-toggle span:nth-child(1) { top: 0; }
+.nav-toggle span:nth-child(2) { top: 9px; }
+.nav-toggle span:nth-child(3) { top: 18px; }
+
+.nav-toggle.open span:nth-child(1) { top: 9px; transform: rotate(45deg); }
+.nav-toggle.open span:nth-child(2) { opacity: 0; }
+.nav-toggle.open span:nth-child(3) { top: 9px; transform: rotate(-45deg); }
 
 .nav-links {
   display: flex;
@@ -97,6 +128,47 @@ a {
 
 .nav-links a:hover {
   color: var(--orange-deep);
+}
+
+@media (max-width: 760px) {
+  .nav-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    gap: 0;
+    background: var(--cream);
+    border-bottom: 1px solid rgba(193, 68, 14, 0.12);
+    box-shadow: 0 16px 24px rgba(74, 47, 29, 0.1);
+    padding: 4px 24px 12px;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .nav-links a {
+    padding: 14px 4px;
+    border-bottom: 1px solid rgba(193, 68, 14, 0.08);
+  }
+
+  .nav-links a:last-child {
+    border-bottom: none;
+  }
+
+  .nav-compact .nav-inner {
+    padding: 10px 24px;
+  }
+
+  .nav-hidden {
+    transform: translateY(-100%);
+  }
 }
 
 /* Hero */
@@ -144,6 +216,18 @@ a {
   gap: 16px;
   justify-content: center;
   flex-wrap: wrap;
+}
+
+@media (max-width: 480px) {
+  .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
 }
 
 .hero-photo {
