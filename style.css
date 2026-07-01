@@ -108,7 +108,7 @@ a {
   align-items: center;
   justify-content: center;
   text-align: center;
-  background: linear-gradient(160deg, var(--orange-light) 0%, var(--orange) 45%, var(--orange-deep) 100%);
+  background: var(--brown);
   color: var(--orange-cream);
 }
 
@@ -146,15 +146,6 @@ a {
   flex-wrap: wrap;
 }
 
-.hero-blob {
-  position: absolute;
-  inset: -20%;
-  background:
-    radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.18) 0, transparent 40%),
-    radial-gradient(circle at 80% 70%, rgba(74, 47, 29, 0.15) 0, transparent 45%);
-  z-index: 1;
-}
-
 .hero-photo {
   position: absolute;
   inset: 0;
@@ -162,8 +153,13 @@ a {
   height: 100%;
   object-fit: cover;
   z-index: 0;
-  opacity: 0.35;
-  mix-blend-mode: multiply;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  z-index: 1;
 }
 
 /* Buttons */
@@ -495,6 +491,12 @@ a {
 
 .contact-item:hover {
   background: rgba(255, 255, 255, 0.18);
+}
+
+.ig-icon {
+  width: 1.2rem;
+  height: 1.2rem;
+  flex: 0 0 auto;
 }
 
 .copyright {
