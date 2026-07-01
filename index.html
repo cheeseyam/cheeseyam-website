@@ -37,6 +37,7 @@
     </div>
   </div>
   <div class="hero-blob"></div>
+  <img class="hero-photo" src="images/hero.jpeg" alt="胡家起司地瓜燒 五種口味">
 </section>
 
 <section id="story" class="story">
@@ -110,10 +111,38 @@
     </div>
 
     <p class="menu-note">＊ 以上品項基底皆可更換為芋頭燒，價格不變</p>
+
+    <div class="gallery">
+      <button class="gallery-arrow gallery-arrow-left" type="button" aria-label="上一張" onclick="document.getElementById('galleryTrack').scrollBy({left:-260,behavior:'smooth'})">‹</button>
+      <div class="gallery-track" id="galleryTrack">
+        <figure class="gallery-item">
+          <img src="images/flavor-original.jpeg" alt="原味起司地瓜燒" loading="lazy">
+          <figcaption>原味起司地瓜燒</figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <img src="images/flavor-pork-floss.jpeg" alt="肉鬆起司地瓜燒" loading="lazy">
+          <figcaption>肉鬆起司地瓜燒</figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <img src="images/flavor-tuna-corn.jpeg" alt="鮪魚玉米起司地瓜燒" loading="lazy">
+          <figcaption>鮪魚玉米起司地瓜燒</figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <img src="images/flavor-pork-floss-egg.jpeg" alt="烤鹹蛋黃鮪魚玉米起司地瓜燒" loading="lazy">
+          <figcaption>烤鹹蛋黃鮪魚玉米起司地瓜燒</figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <img src="images/flavor-berry.jpeg" alt="莓果起司地瓜燒" loading="lazy">
+          <figcaption>莓果起司地瓜燒</figcaption>
+        </figure>
+      </div>
+      <button class="gallery-arrow gallery-arrow-right" type="button" aria-label="下一張" onclick="document.getElementById('galleryTrack').scrollBy({left:260,behavior:'smooth'})">›</button>
+    </div>
   </div>
 </section>
 
 <section id="stall" class="stall">
+  <div class="stall-bg"></div>
   <div class="section-inner">
     <p class="section-eyebrow">擺攤資訊</p>
     <h2>來鳳西市場找我們</h2>
@@ -123,6 +152,7 @@
         <span class="info-icon">📍</span>
         <h3>擺攤地點</h3>
         <p>鳳西市場</p>
+        <p class="muted">高雄市鳳山區五權南路113之1號(咖啡麵包旁邊)</p>
       </div>
       <div class="info-card">
         <span class="info-icon">🕒</span>
@@ -136,12 +166,14 @@
 
 <section id="delivery" class="delivery">
   <div class="section-inner delivery-inner">
-    <div>
+    <img class="delivery-photo" src="images/flavor-original.jpeg" alt="原味起司地瓜燒">
+    <div class="delivery-content">
       <p class="section-eyebrow section-eyebrow-light">冷凍宅配</p>
       <h2>在家也能吃到炭烤起司地瓜燒</h2>
       <p class="delivery-text">透過賣貨便冷凍宅配，全台配送到府，隨時退凍現烤都好吃。</p>
       <a class="btn btn-light" href="https://myship.7-11.com.tw/general/detail/GM2603236226891" target="_blank" rel="noopener">🧊 前往賣貨便下單</a>
     </div>
+    <img class="delivery-photo" src="images/flavor-tuna-corn.jpeg" alt="鮪魚玉米起司地瓜燒">
   </div>
 </section>
 
