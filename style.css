@@ -364,6 +364,26 @@ a {
   color: var(--orange-deep);
 }
 
+@media (max-width: 600px) {
+  .menu-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .menu-card {
+    padding: 18px 14px;
+  }
+
+  .menu-card h3 {
+    font-size: 0.95rem;
+    margin-bottom: 8px;
+  }
+
+  .menu-card .price {
+    font-size: 1.25rem;
+  }
+}
+
 .menu-note {
   margin-top: 28px;
   color: #8a6b52;
